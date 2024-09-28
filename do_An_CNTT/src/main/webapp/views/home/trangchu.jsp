@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +9,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+</style>
 <link rel="stylesheet" type="text/css"
-	href="styles/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+	href="views/home/styles/bootstrap4/bootstrap.min.css">
+<link
+	href="views/home/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/offers_styles.css">
 <link rel="stylesheet" type="text/css"
-	href="styles/offers_responsive.css">
+	href="views/home/styles/offers_styles.css">
+<link rel="stylesheet" type="text/css"
+	href="views/home/styles/offers_responsive.css">
 </head>
 <body>
-<div class="super_container">
+	<div class="super_container">
 		<!-- Header -->
 
 		<header class="header">
@@ -30,23 +35,40 @@
 						<div class="col d-flex flex-row">
 							<div class="social">
 								<ul class="social_list">
-									<li class="social_list_item"><a href="#"><i class="fa fa-pinterest"
-												aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i class="fa fa-facebook"
-												aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i class="fa fa-twitter"
-												aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i class="fa fa-dribbble"
-												aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i class="fa fa-behance"
-												aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i class="fa fa-linkedin"
-												aria-hidden="true"></i></a></li>
+									<li class="social_list_item"><a href="#"><i
+											class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li class="social_list_item"><a href="#"><i
+											class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li class="social_list_item"><a href="#"><i
+											class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li class="social_list_item"><a href="#"><i
+											class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+									<li class="social_list_item"><a href="#"><i
+											class="fa fa-behance" aria-hidden="true"></i></a></li>
+									<li class="social_list_item"><a href="#"><i
+											class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
+
 							<div class="user_box ml-auto">
-								<div class="user_box_login user_box_link"><a href="/do_An_CNTT/login">login</a></div>
-								<div class="user_box_register user_box_link"><a href="/do_An_CNTT/views/register/dangKy">register</a></div>
+								<div class="header">
+									<c:choose>
+										<c:when test="${not empty username}">
+											<div class="user_box_login user_box_link">
+               									 Xin chào, <strong>${username}</strong> | 
+                								<a href="logout">Đăng xuất</a>
+                							</div>
+										</c:when>
+										<c:otherwise>
+											<div class="user_box_login user_box_link">
+												<a href="/do_An_CNTT/login">login</a>
+											</div>
+											<div class="user_box_register user_box_link">
+												<a href="/do_An_CNTT/views/register/dangKy">register</a>
+											</div>
+										</c:otherwise>
+									</c:choose>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -59,7 +81,7 @@
 
 		<div class="home">
 			<div class="home_background parallax-window" data-parallax="scroll"
-				data-image-src="images/about_background.jpg"></div>
+				data-image-src="views/home/images/about_background.jpg"></div>
 			<div class="home_content">
 				<div class="home_title">Ngắm nhìn thế giới</div>
 			</div>
@@ -86,15 +108,18 @@
 										class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 										<div class="search_item">
 											<div>Điểm đến</div>
-											<input type="text" class="destination search_input" required="required">
+											<input type="text" class="destination search_input"
+												required="required">
 										</div>
 										<div class="search_item">
 											<div>check in</div>
-											<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+											<input type="text" class="check_in search_input"
+												placeholder="YYYY-MM-DD">
 										</div>
 										<div class="search_item">
 											<div>check out</div>
-											<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+											<input type="text" class="check_out search_input"
+												placeholder="YYYY-MM-DD">
 										</div>
 										<div class="search_item">
 											<div>Người lớn</div>
@@ -119,49 +144,50 @@
 												<li class="search_extras_item">
 													<div class="clearfix">
 														<input type="checkbox" id="search_extras_1"
-															class="search_extras_cb">
-														<label for="search_extras_1">Thân thiện với vật nuôi</label>
+															class="search_extras_cb"> <label
+															for="search_extras_1">Thân thiện với vật nuôi</label>
 													</div>
 												</li>
 												<li class="search_extras_item">
 													<div class="clearfix">
 														<input type="checkbox" id="search_extras_2"
-															class="search_extras_cb">
-														<label for="search_extras_2">Bãi đậu xe</label>
+															class="search_extras_cb"> <label
+															for="search_extras_2">Bãi đậu xe</label>
 													</div>
 												</li>
 												<li class="search_extras_item">
 													<div class="clearfix">
 														<input type="checkbox" id="search_extras_3"
-															class="search_extras_cb">
-														<label for="search_extras_3">Wifi</label>
+															class="search_extras_cb"> <label
+															for="search_extras_3">Wifi</label>
 													</div>
 												</li>
 												<li class="search_extras_item">
 													<div class="clearfix">
 														<input type="checkbox" id="search_extras_5"
-															class="search_extras_cb">
-														<label for="search_extras_4">Bãi đậu xe riêng</label>
+															class="search_extras_cb"> <label
+															for="search_extras_4">Bãi đậu xe riêng</label>
 													</div>
 												</li>
 												<li class="search_extras_item">
 													<div class="clearfix">
 														<input type="checkbox" id="search_extras_6"
-															class="search_extras_cb">
-														<label for="search_extras_5">Khu vực hút thuốc</label>
+															class="search_extras_cb"> <label
+															for="search_extras_5">Khu vực hút thuốc</label>
 													</div>
 												</li>
 												<li class="search_extras_item">
 													<div class="clearfix">
 														<input type="checkbox" id="search_extras_7"
-															class="search_extras_cb">
-														<label for="search_extras_6">Hồ bơi</label>
+															class="search_extras_cb"> <label
+															for="search_extras_6">Hồ bơi</label>
 													</div>
 												</li>
 											</ul>
 										</div>
-										<button
-											class="button search_button">search<span></span><span></span><span></span></button>
+										<button class="button search_button">
+											search<span></span><span></span><span></span>
+										</button>
 									</form>
 								</div>
 							</div>
@@ -173,12 +199,12 @@
 	</div>
 
 
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="styles/bootstrap4/popper.js"></script>
-	<script src="styles/bootstrap4/bootstrap.min.js"></script>
-	<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-	<script src="plugins/easing/easing.js"></script>
-	<script src="plugins/parallax-js-master/parallax.min.js"></script>
-	<script src="js/offers_custom.js"></script>
+	<script src="views/home/js/jquery-3.2.1.min.js"></script>
+	<script src="views/home/styles/bootstrap4/popper.js"></script>
+	<script src="views/home/styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="views/home/plugins/Isotope/isotope.pkgd.min.js"></script>
+	<script src="views/home/plugins/easing/easing.js"></script>
+	<script src="views/home/plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="views/home/js/offers_custom.js"></script>
 </body>
 </html>

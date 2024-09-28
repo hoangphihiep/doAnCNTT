@@ -148,7 +148,7 @@ form .signup-link a:hover{
 		</c:if>
 		<div class="wrapper">
 			<div class="title">Login Form</div>
-			<form action="\ltweb_chieut3\login" method="post">
+			<form action="\do_An_CNTT\login" method="post">
 				<div class="field">
 					<input type="text" name="username" required> <label>User
 						name</label>
