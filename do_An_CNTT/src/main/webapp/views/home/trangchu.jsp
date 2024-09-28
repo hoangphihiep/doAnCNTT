@@ -64,7 +64,7 @@
 												<a href="/do_An_CNTT/login">login</a>
 											</div>
 											<div class="user_box_register user_box_link">
-												<a href="/do_An_CNTT/views/register/dangKy">register</a>
+												<a href="/do_An_CNTT/register">register</a>
 											</div>
 										</c:otherwise>
 									</c:choose>

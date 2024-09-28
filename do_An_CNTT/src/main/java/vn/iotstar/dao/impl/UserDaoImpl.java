@@ -121,7 +121,7 @@ public class UserDaoImpl extends DBConnectionSQL implements IUserDao {
 			IUserDao userDao = new UserDaoImpl();
 
 			userDao.insert(
-					new UserModel("khanh", "Nguyen Van Khanh", null , "Nam", "khanh@gmail.com", "0724284124", "123"));
+					new UserModel("khanh1", "Nguyen Van Khanh1", null , "Nam", "khanh1@gmail.com", "07242841241", "123"));
 
 			List<UserModel> list = userDao.findAll();
 			for (UserModel user : list) {

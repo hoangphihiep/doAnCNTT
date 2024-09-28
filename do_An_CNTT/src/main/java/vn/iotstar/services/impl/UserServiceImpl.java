@@ -1,6 +1,7 @@
 package vn.iotstar.services.impl;
 
 import java.sql.Date;
+import java.util.List;
 
 import vn.iotstar.dao.IUserDao;
 import vn.iotstar.dao.impl.UserDaoImpl;
@@ -74,5 +75,4 @@ public class UserServiceImpl implements IUserServices {
 				userDao.insert(new UserModel(username, fullname, createDate, gender, email, phone, password));
 				return true;
 	}
-
 }
