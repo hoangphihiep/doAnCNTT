@@ -1,210 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="jakarta.tags.core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Offers</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Travelix Project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-</style>
-<link rel="stylesheet" type="text/css"
-	href="views/home/styles/bootstrap4/bootstrap.min.css">
-<link
-	href="views/home/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css"
-	href="views/home/styles/offers_styles.css">
-<link rel="stylesheet" type="text/css"
-	href="views/home/styles/offers_responsive.css">
-</head>
-<body>
-	<div class="super_container">
-		<!-- Header -->
 
-		<header class="header">
-
-			<!-- Top Bar -->
-
-			<div class="top_bar">
-				<div class="container">
-					<div class="row">
-						<div class="col d-flex flex-row">
-							<div class="social">
-								<ul class="social_list">
-									<li class="social_list_item"><a href="#"><i
-											class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i
-											class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i
-											class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i
-											class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i
-											class="fa fa-behance" aria-hidden="true"></i></a></li>
-									<li class="social_list_item"><a href="#"><i
-											class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-
-							<div class="user_box ml-auto">
-								<div class="header">
-									<c:choose>
-										<c:when test="${not empty username}">
-											<div class="user_box_login user_box_link">
-               									 Xin chào, <strong>${username}</strong> | 
-                								<a href="logout">Đăng xuất</a>
-                							</div>
-										</c:when>
-										<c:otherwise>
-											<div class="user_box_login user_box_link">
-												<a href="/do_An_CNTT/login">login</a>
-											</div>
-											<div class="user_box_register user_box_link">
-												<a href="/do_An_CNTT/register">register</a>
-											</div>
-										</c:otherwise>
-									</c:choose>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</header>
-
-		<!-- Home -->
-
-		<div class="home">
-			<div class="home_background parallax-window" data-parallax="scroll"
-				data-image-src="views/home/images/about_background.jpg"></div>
-			<div class="home_content">
-				<div class="home_title">Ngắm nhìn thế giới</div>
-			</div>
-		</div>
-
-		<!-- Offers -->
-
-		<div class="offers">
-
-			<!-- Search -->
-
-			<div class="search">
-				<div class="search_inner">
-
-					<!-- Search Contents -->
-
-					<div class="container fill_height no-padding">
-						<div class="row fill_height no-margin">
-							<div class="col fill_height no-padding">
-								<!-- Search Panel -->
-
-								<div class="search_panel active">
-									<form action="#" id="search_form_1"
-										class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-										<div class="search_item">
-											<div>Điểm đến</div>
-											<input type="text" class="destination search_input"
-												required="required">
-										</div>
-										<div class="search_item">
-											<div>check in</div>
-											<input type="text" class="check_in search_input"
-												placeholder="YYYY-MM-DD">
-										</div>
-										<div class="search_item">
-											<div>check out</div>
-											<input type="text" class="check_out search_input"
-												placeholder="YYYY-MM-DD">
-										</div>
-										<div class="search_item">
-											<div>Người lớn</div>
-											<select name="adults" id="adults_1"
-												class="dropdown_item_select search_input">
-												<option>01</option>
-												<option>02</option>
-												<option>03</option>
-											</select>
-										</div>
-										<div class="search_item">
-											<div>Trẻ em</div>
-											<select name="children" id="children_1"
-												class="dropdown_item_select search_input">
-												<option>0</option>
-												<option>02</option>
-												<option>03</option>
-											</select>
-										</div>
-										<div class="extras">
-											<ul class="search_extras clearfix">
-												<li class="search_extras_item">
-													<div class="clearfix">
-														<input type="checkbox" id="search_extras_1"
-															class="search_extras_cb"> <label
-															for="search_extras_1">Thân thiện với vật nuôi</label>
-													</div>
-												</li>
-												<li class="search_extras_item">
-													<div class="clearfix">
-														<input type="checkbox" id="search_extras_2"
-															class="search_extras_cb"> <label
-															for="search_extras_2">Bãi đậu xe</label>
-													</div>
-												</li>
-												<li class="search_extras_item">
-													<div class="clearfix">
-														<input type="checkbox" id="search_extras_3"
-															class="search_extras_cb"> <label
-															for="search_extras_3">Wifi</label>
-													</div>
-												</li>
-												<li class="search_extras_item">
-													<div class="clearfix">
-														<input type="checkbox" id="search_extras_5"
-															class="search_extras_cb"> <label
-															for="search_extras_4">Bãi đậu xe riêng</label>
-													</div>
-												</li>
-												<li class="search_extras_item">
-													<div class="clearfix">
-														<input type="checkbox" id="search_extras_6"
-															class="search_extras_cb"> <label
-															for="search_extras_5">Khu vực hút thuốc</label>
-													</div>
-												</li>
-												<li class="search_extras_item">
-													<div class="clearfix">
-														<input type="checkbox" id="search_extras_7"
-															class="search_extras_cb"> <label
-															for="search_extras_6">Hồ bơi</label>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<button class="button search_button">
-											search<span></span><span></span><span></span>
-										</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<div
+	style="background-color: #F7F7F7; height: 230px; border: 1px solid #E0E0E0;">
+	<div class="c80" style="margin-top: 40px">
+		<h2>Tìm kiếm ưu đãi khách sạn, chỗ nghỉ ...</h2>
+		<h5>Từ những khu nghỉ dưỡng thanh bình đến những căn hộ hạng sang
+			hiện đại</h5>
+		<div class="tim-kiem">
+			<form action="${pageContext.request.contextPath}/timKiem.do"
+				method="post">
+				<input type="text" id="a" placeholder="Nhập thành phố"
+					name="tenThanhPhoTimKiem" /> <input type="text" id="b"
+					placeholder="Ngày đến - Ngày trả" readonly="true"
+					name="thoiGianTimKiem" />
+				<button type="submit" class="btn-timkiem">Tìm</button>
+			</form>
 		</div>
 	</div>
+</div>
 
+<div class="c80">
+	<h2>Tìm theo Thành phố</h2>
+	<div class="row">
+		<form action="${pageContext.request.contextPath}/dsTheoThanhPho.do"
+			method="post">
+			<c:forEach items="${beanThanhPho.listThanhPho}" var="item" begin="0"
+				end="1">
+				<a
+					href="${pageContext.request.contextPath}/dsTheoThanhPho.do?id=${item.id}">
+					<div class="col-md-6">
+						<div class="div-zoom">
+							<img class="img-zoom" src="${item.urlHinhAnh}" alt="Img" />
+						</div>
+						<div class="chu-goc-trai">
+							<span style="font-size: 28px; font-weight: bold;">${item.ten}</span>
+							<img src="/do_An_CNTT/Content/Images/VietNamFlag.png" alt="VietNam"
+								valign="middle" /> <br /> <span style="font-size: 16px;">
+								${item.soKhachSan * 135} chỗ ở </span>
+						</div>
+					</div>
+				</a>
+			</c:forEach>
+		</form>
+	</div>
+</div>
 
-	<script src="views/home/js/jquery-3.2.1.min.js"></script>
-	<script src="views/home/styles/bootstrap4/popper.js"></script>
-	<script src="views/home/styles/bootstrap4/bootstrap.min.js"></script>
-	<script src="views/home/plugins/Isotope/isotope.pkgd.min.js"></script>
-	<script src="views/home/plugins/easing/easing.js"></script>
-	<script src="views/home/plugins/parallax-js-master/parallax.min.js"></script>
-	<script src="views/home/js/offers_custom.js"></script>
-</body>
-</html>
+<div class="row">
+            <form action="${pageContext.request.contextPath}/dsTheoThanhPho.do" method="post">
+                <c:forEach items="${beanThanhPho.listThanhPho}" var="item" begin="2" end="4">
+                    <a href="${pageContext.request.contextPath}/dsTheoThanhPho.do?id=${item.id}">
+                        <div class="col-md-4">
+                            <div class="div-zoom">
+                                <img class="img-zoom" src="${item.urlHinhAnh}" alt="Img"/>
+                            </div>
+                            <div class="chu-goc-trai">
+                                <span style="font-size: 28px; font-weight: bold;">${item.ten}</span>
+                                <img src="/do_An_CNTT/Content/Images/VietNamFlag.png" alt="VietNam" valign="middle"/>
+                                <br/>
+                                <span style="font-size: 16px;">
+                                    ${item.soKhachSan * 135} chỗ ở
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </c:forEach>
+            </form>
+        </div>
+    </div>
+
+<div class="c80">
+        <h2>Tìm theo Loại khách sạn</h2>
+        <div class="row">
+            <div class="MultiCarousel" data-items="1,2,3,4" data-slide="1" id="MultiCarousel" data-interval="1000">
+                <div class="MultiCarousel-inner">
+                    <form action="${pageContext.request.contextPath}/dsTheoLoaiKhachSan.do" method="post">
+                        <c:forEach items="${beanLoaiKhachSan.listLoaiKhachSan}" var="item">
+                            <a href="${pageContext.request.contextPath}/dsTheoLoaiKhachSan.do?id=${item.id}" style="text-decoration: none">
+                                <div class="item">
+                                    <div class="img-loaiks"><img src="${item.urlHinhAnh}" alt="Img"/></div>
+                                    <br/>
+                                    <div style="padding-left: 10px;">
+                                        <span style="font-size: 18px; font-weight: bold">${item.ten}</span>
+                                        <br/>
+                                        <span style="font-size: 16px;">
+                                            Gồm ${item.soKhachSan * 135} khách sạn
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </c:forEach>
+                    </form>
+                </div>
+                <button class="btn btn-primary leftLst"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                <button class="btn btn-primary rightLst"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+            </div>
+        </div>
+    </div>
+    
+<div class="c80">
+        <h2>Các Khách sạn nổi bật</h2>
+        <div class="row">
+            <c:forEach items="${beanKhachSan.listKhachSan}" begin="0" end="3" var="item">
+                <div class="col-md-3 ks-noibat">
+                    <form action="${pageContext.request.contextPath}/thongTinKhachSan.do" method="post">
+                        <a href="${pageContext.request.contextPath}/thongTinKhachSan.do?id=${item.id}">
+                            <div class="div-ks">
+                                <img style="height: 220px" src="/do_An_CNTT/Content/Images/KhachSan/${item.id}.jpg" alt="Img"/>
+                            </div>
+                            <div style="font-size: 18px; font-weight: bold; color: #0077CC">${item.ten}</div>
+                            <div style="font-size: 14px; color: #777777 ">${item.tenThanhPho}</div>
+                            <div style="font-size: 14px; color: #777777">${item.tenLoaiKhachSan}</div>
+                            <div style="font-size: 16px; font-weight: bold; color: #003580">${item.danhGia} &#9733; - ${beanKhachSan.strDanhGia[item.danhGia]}</div>
+                        </a>
+                    </form>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+    
