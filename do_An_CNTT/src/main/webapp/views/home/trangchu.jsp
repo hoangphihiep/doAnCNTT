@@ -8,12 +8,11 @@
 		<h5>Từ những khu nghỉ dưỡng thanh bình đến những căn hộ hạng sang
 			hiện đại</h5>
 		<div class="tim-kiem">
-			<form action="${pageContext.request.contextPath}/timKiem.do"
+			<form action="${pageContext.request.contextPath}/home"
 				method="post">
-				<input type="text" id="a" placeholder="Nhập thành phố"
-					name="tenThanhPhoTimKiem" /> <input type="text" id="b"
-					placeholder="Ngày đến - Ngày trả" readonly="true"
-					name="thoiGianTimKiem" />
+				<input type="text" id="a" placeholder="Nhập thành phố" name="tenThanhPhoTimKiem" /> 
+				<input type="date" id="b" placeholder="Ngày đến" name="ngayDen" />
+				<input type="date" id="b" placeholder="Ngày đi" name="ngayDi" />
 				<button type="submit" class="btn-timkiem">Tìm</button>
 			</form>
 		</div>
@@ -23,7 +22,7 @@
 <div class="c80">
 	<h2>Tìm theo Thành phố</h2>
 	<div class="row">
-		<form action="${pageContext.request.contextPath}/dsTheoThanhPho.do"
+		<form action="${pageContext.request.contextPath}/home/dsTheoThanhPho"
 			method="post">
 			<c:forEach items="${beanThanhPho.listThanhPho}" var="item" begin="0"
 				end="1">

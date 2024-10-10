@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import vn.iotstar.models.UserModel;
 
-@WebServlet("/home")
+@WebServlet(urlPatterns = {"/home","/home/dsTheoThanhPho"})
 public class HomeController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

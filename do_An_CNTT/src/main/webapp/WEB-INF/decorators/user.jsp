@@ -7,17 +7,11 @@
 <html>
 <head>
 <title>PrimeFaces</title>
-<link type="text/css" rel="stylesheet"
-	href="/do_An_CNTT/Content/css/bootstrap.min.css" />
-<script src="/do_An_CNTT/Content/js/bootstrap.min.js"></script>
-<link type="text/css" rel="stylesheet"
-	href="/do_An_CNTT/Content/css/style.css" />
-<link type="text/css" rel="stylesheet"
-	href="/do_An_CNTT/Content/css/font.css" />
-<link type="text/css" rel="stylesheet"
-	href="/do_An_CNTT/Content/css/carousel.css" />
-<script src="/do_An_CNTT/Content/js/bootstrap.min.js"></script>
-<script src="/do_An_CNTT/Content/js/carousel.js"></script>
+<link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/bootstrap.min.css" />
+<!-- //<script src="/do_An_CNTT/Content/js/bootstrap.min.js"></script> -->
+<link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/style.css" />
+<link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/font.css" />
+<link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/carousel.css" />
 <!--<link href="https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap" rel="stylesheet"/>-->
 
 </head>
@@ -40,7 +34,7 @@
 		<%@ include file="/commons/user/footer.jsp"%>
 		<!-- End Footer -->
 	</div>
-
+	
 	<script>
 		var link_active = 1;
 	</script>
