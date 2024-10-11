@@ -8,17 +8,16 @@
 		<h5>Từ những khu nghỉ dưỡng thanh bình đến những căn hộ hạng sang
 			hiện đại</h5>
 		<div class="tim-kiem">
-			<form action="${pageContext.request.contextPath}/home"
-				method="post">
-				<input type="text" id="a" placeholder="Nhập thành phố" name="tenThanhPhoTimKiem" /> 
-				<input type="date" id="b" placeholder="Ngày đến" name="ngayDen" />
-				<input type="date" id="b" placeholder="Ngày đi" name="ngayDi" />
-				<button type="submit" class="btn-timkiem">Tìm</button>
+			<form action="${pageContext.request.contextPath}/home" method="post">
+				 <input type="text" class="ui-inputfield" id="a" name="tenThanhPhoTimKiem" placeholder="Nhập thành phố" value="<%= request.getAttribute("tenThanhPhoTimKiem") %>" />
+    			 <input type="text" class="ui-inputfield" id="b" placeholder="Ngày đến - Ngày trả" name="thoiGianTimKiem" readonly />
+    			 <button type="submit" class="btn-timkiem">Tìm</button>
 			</form>
 		</div>
 	</div>
-</div>
+</div> 
 
+<!-- tìm kiếm theo thành phố -->
 <div class="c80">
 	<h2>Tìm theo Thành phố</h2>
 	<div class="row">
@@ -67,54 +66,3 @@
             </form>
         </div>
     </div>
-
-<div class="c80">
-        <h2>Tìm theo Loại khách sạn</h2>
-        <div class="row">
-            <div class="MultiCarousel" data-items="1,2,3,4" data-slide="1" id="MultiCarousel" data-interval="1000">
-                <div class="MultiCarousel-inner">
-                    <form action="${pageContext.request.contextPath}/dsTheoLoaiKhachSan.do" method="post">
-                        <c:forEach items="${beanLoaiKhachSan.listLoaiKhachSan}" var="item">
-                            <a href="${pageContext.request.contextPath}/dsTheoLoaiKhachSan.do?id=${item.id}" style="text-decoration: none">
-                                <div class="item">
-                                    <div class="img-loaiks"><img src="${item.urlHinhAnh}" alt="Img"/></div>
-                                    <br/>
-                                    <div style="padding-left: 10px;">
-                                        <span style="font-size: 18px; font-weight: bold">${item.ten}</span>
-                                        <br/>
-                                        <span style="font-size: 16px;">
-                                            Gồm ${item.soKhachSan * 135} khách sạn
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </c:forEach>
-                    </form>
-                </div>
-                <button class="btn btn-primary leftLst"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
-                <button class="btn btn-primary rightLst"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-            </div>
-        </div>
-    </div>
-    
-<div class="c80">
-        <h2>Các Khách sạn nổi bật</h2>
-        <div class="row">
-            <c:forEach items="${beanKhachSan.listKhachSan}" begin="0" end="3" var="item">
-                <div class="col-md-3 ks-noibat">
-                    <form action="${pageContext.request.contextPath}/thongTinKhachSan.do" method="post">
-                        <a href="${pageContext.request.contextPath}/thongTinKhachSan.do?id=${item.id}">
-                            <div class="div-ks">
-                                <img style="height: 220px" src="/do_An_CNTT/Content/Images/KhachSan/3.jpg" alt="Img"/>
-                            </div>
-                            <div style="font-size: 18px; font-weight: bold; color: #0077CC">${item.ten}</div>
-                            <div style="font-size: 14px; color: #777777 ">${item.tenThanhPho}</div>
-                            <div style="font-size: 14px; color: #777777">${item.tenLoaiKhachSan}</div>
-                            <div style="font-size: 16px; font-weight: bold; color: #003580">${item.danhGia} &#9733; - ${beanKhachSan.strDanhGia[item.danhGia]}</div>
-                        </a>
-                    </form>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-    
