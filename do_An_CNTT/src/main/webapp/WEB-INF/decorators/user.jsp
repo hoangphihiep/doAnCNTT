@@ -8,10 +8,11 @@
 <head>
 <title>PrimeFaces</title>
 <link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/bootstrap.min.css" />
-<!-- //<script src="/do_An_CNTT/Content/js/bootstrap.min.js"></script> -->
+<!-- // -->
 <link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/style.css" />
 <link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/font.css" />
 <link type="text/css" rel="stylesheet" href="/do_An_CNTT/Content/css/carousel.css" />
+
 <!--<link href="https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap" rel="stylesheet"/>-->
 
 </head>
@@ -34,7 +35,10 @@
 		<%@ include file="/commons/user/footer.jsp"%>
 		<!-- End Footer -->
 	</div>
-	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/do_An_CNTT/Content/js/bootstrap.min.js"></script>
+	<script src="/do_An_CNTT/Content/js/carousel.js"></script>
 	<script>
 		var link_active = 1;
 	</script>

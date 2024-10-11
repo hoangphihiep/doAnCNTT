@@ -105,7 +105,7 @@
                     <form action="${pageContext.request.contextPath}/thongTinKhachSan.do" method="post">
                         <a href="${pageContext.request.contextPath}/thongTinKhachSan.do?id=${item.id}">
                             <div class="div-ks">
-                                <img style="height: 220px" src="/do_An_CNTT/Content/Images/KhachSan/${item.id}.jpg" alt="Img"/>
+                                <img style="height: 220px" src="/do_An_CNTT/Content/Images/KhachSan/3.jpg" alt="Img"/>
                             </div>
                             <div style="font-size: 18px; font-weight: bold; color: #0077CC">${item.ten}</div>
                             <div style="font-size: 14px; color: #777777 ">${item.tenThanhPho}</div>
