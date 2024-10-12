@@ -64,4 +64,10 @@ public class LoaiKhachSanModel implements Serializable {
 	public void setSoKhachSan(int soKhachSan) {
 		this.soKhachSan = soKhachSan;
 	}
+
+	@Override
+	public String toString() {
+		return "LoaiKhachSanModel [id=" + id + ", ten=" + ten + ", moTa=" + moTa + ", urlHinhAnh=" + urlHinhAnh
+				+ ", soKhachSan=" + soKhachSan + "]";
+	}
 }

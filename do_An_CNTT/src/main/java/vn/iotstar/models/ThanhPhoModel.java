@@ -25,6 +25,13 @@ public class ThanhPhoModel implements Serializable {
 		this.soKhachSan = soKhachSan;
 	}
 
+	public ThanhPhoModel(String ten, String moTa, String urlHinhAnh) {
+		super();
+		this.ten = ten;
+		this.moTa = moTa;
+		this.urlHinhAnh = urlHinhAnh;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -64,4 +71,11 @@ public class ThanhPhoModel implements Serializable {
 	public void setSoKhachSan(int soKhachSan) {
 		this.soKhachSan = soKhachSan;
 	}
+
+	@Override
+	public String toString() {
+		return "ThanhPhoModel [id=" + id + ", ten=" + ten + ", moTa=" + moTa + ", urlHinhAnh=" + urlHinhAnh
+				+ ", soKhachSan=" + soKhachSan + "]";
+	}
+	
 }

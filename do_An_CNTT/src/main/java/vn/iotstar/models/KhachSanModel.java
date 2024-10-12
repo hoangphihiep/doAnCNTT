@@ -156,4 +156,14 @@ public class KhachSanModel implements Serializable{
 	public void setUrlHinhAnhThanhPho(String urlHinhAnhThanhPho) {
 		this.urlHinhAnhThanhPho = urlHinhAnhThanhPho;
 	}
+
+	@Override
+	public String toString() {
+		return "KhachSanModel [id=" + id + ", ten=" + ten + ", diaChi=" + diaChi + ", soDienThoai=" + soDienThoai
+				+ ", cachTrungTam=" + cachTrungTam + ", moTa=" + moTa + ", giapBien=" + giapBien + ", danhGia="
+				+ danhGia + ", buaAn=" + buaAn + ", idThanhPho=" + idThanhPho + ", tenThanhPho=" + tenThanhPho
+				+ ", idLoaiKhachSan=" + idLoaiKhachSan + ", tenLoaiKhachSan=" + tenLoaiKhachSan
+				+ ", urlHinhAnhThanhPho=" + urlHinhAnhThanhPho + "]";
+	}
+	
 }
