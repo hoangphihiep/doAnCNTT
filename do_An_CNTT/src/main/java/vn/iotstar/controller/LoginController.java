@@ -22,13 +22,6 @@ public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// lấy toàn bộ hàm trong service
 	IUserServices service = new UserServiceImpl();
-	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		req.getRequestDispatcher("/views/login/dangNhap.jsp").forward(req, resp);
-	}
-
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
