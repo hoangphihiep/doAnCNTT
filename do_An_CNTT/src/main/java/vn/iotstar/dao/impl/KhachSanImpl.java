@@ -8,9 +8,7 @@ import java.util.List;
 
 import vn.iotstar.configs.DBConnectionSQL;
 import vn.iotstar.dao.IKhachSanDao;
-import vn.iotstar.dao.ILoaiKhachSanDao;
 import vn.iotstar.models.KhachSanModel;
-import vn.iotstar.models.LoaiKhachSanModel;
 
 public class KhachSanImpl extends DBConnectionSQL implements IKhachSanDao {
 
@@ -153,6 +151,43 @@ public class KhachSanImpl extends DBConnectionSQL implements IKhachSanDao {
 			}
 			return list;
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public KhachSanModel findById(int id) {
+		String sql = "select K.Id as Id, K.Ten as Ten, DiaChi,SoDienThoai, CachTrungTam, K.MoTa, GiapBien, DanhGia, BuaAn, IdThanhPho,T.Ten as TenThanhPho, IdLoaiKhachSan, L.Ten as TenLoaiKhachSan, T.UrlHinhAnh from KhachSan K, ThanhPho T,LoaiKhachSan L where K.Id = ? and K.IdThanhPho = T.Id and K.IdLoaiKhachSan = L.Id";
+		try {
+			conn = new DBConnectionSQL().getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next())
+			{
+				KhachSanModel khachsan = new KhachSanModel();
+				khachsan.setId(rs.getInt("Id"));;
+				khachsan.setTen(rs.getString("Ten"));
+				khachsan.setDiaChi(rs.getString("DiaChi"));
+				khachsan.setSoDienThoai(rs.getString("SoDienThoai"));
+				khachsan.setCachTrungTam(rs.getInt("CachTrungTam"));
+				khachsan.setMoTa(rs.getString("MoTa"));
+				khachsan.setGiapBien(rs.getBoolean("GiapBien"));
+				khachsan.setDanhGia(rs.getInt("DanhGia"));
+				khachsan.setBuaAn(rs.getInt("BuaAn"));
+				khachsan.setIdThanhPho(rs.getInt("IdThanhPho"));
+				khachsan.setTenThanhPho(rs.getString("TenThanhPho"));
+				khachsan.setIdLoaiKhachSan(rs.getInt("IdLoaiKhachSan"));
+				khachsan.setTenLoaiKhachSan(rs.getString("TenLoaiKhachSan"));
+				khachsan.setUrlHinhAnhThanhPho(rs.getString("UrlHinhAnh"));
+				return khachsan;
+			}
+			conn.close();
+			ps.close();
+			rs.close();
+		} catch (Exception e) {
+			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return null;

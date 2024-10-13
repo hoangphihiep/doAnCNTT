@@ -35,4 +35,9 @@ public class KhachSanServiceImpl implements IKhachSanService {
 		return khachSanDao.findByIdThanhPho(idThanhPho);
 	}
 
+	@Override
+	public KhachSanModel findById(int id) {
+		return khachSanDao.findById(id);
+	}
+
 }

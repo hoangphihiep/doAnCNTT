@@ -75,7 +75,7 @@
                 <div class="col-md-9">
                     <form id="form" method="post" action="hotelListAction">
                         <c:forEach var="ks" items="${listks}">
-                            <a href="hotelDetailAction?id=${ks.id}" class="link-khachsan">
+                            <a href="<c:url value='/khachsan?id=${ks.id}'/>" class="link-khachsan">
                                 <div class="div-khachsan" style="height: 240px; border: 1px solid #c0c0c0; border-radius: 5px; margin-top: 20px">
                                     <div class="row">
                                         <div class="col-md-4" style="margin: 20px 0 0 20px; width: 240px">
