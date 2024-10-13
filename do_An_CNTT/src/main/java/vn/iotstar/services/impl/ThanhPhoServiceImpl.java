@@ -30,4 +30,9 @@ public class ThanhPhoServiceImpl implements IThanhPhoService {
 		thanhPhoDao.delete(idthanhpho);
 	}
 
+	@Override
+	public ThanhPhoModel findByName(String tenDiaDiem) {
+		return thanhPhoDao.findByName(tenDiaDiem);
+	}
+
 }

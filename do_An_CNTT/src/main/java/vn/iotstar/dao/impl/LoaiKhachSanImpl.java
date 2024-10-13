@@ -99,4 +99,22 @@ public class LoaiKhachSanImpl extends DBConnectionSQL implements ILoaiKhachSanDa
 		}
 
 	}
+
+	@Override
+	public List<LoaiKhachSanModel> listTenLoaiKhachSan() {
+		String sql = "select Ten from LoaiKhachSan";
+		List<LoaiKhachSanModel> listTen = new ArrayList<LoaiKhachSanModel>();
+		try {
+			conn = new DBConnectionSQL().getConnection();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				listTen.add(new LoaiKhachSanModel(rs.getString("Ten")));
+			}
+			return listTen;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

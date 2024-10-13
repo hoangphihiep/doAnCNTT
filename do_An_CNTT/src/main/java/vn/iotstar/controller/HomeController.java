@@ -22,7 +22,7 @@ import vn.iotstar.services.impl.KhachSanServiceImpl;
 import vn.iotstar.services.impl.LoaiKhachSanServiceImpl;
 import vn.iotstar.services.impl.ThanhPhoServiceImpl;
 
-@WebServlet(urlPatterns = {"/home","/home/dsTheoThanhPho"})
+@WebServlet(urlPatterns = {"/home"})
 public class HomeController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -49,8 +49,10 @@ public class HomeController extends HttpServlet {
 		req.setAttribute("listloaiks", listLoaiKS);
 		
 		//danh sách khách sạn
+		String[] strDanhGia = {"Bình thường", "Khá ổn", "Chất lượng", "Sang trọng", "Tuyệt vời", "Xuất sắc"};
 		List<KhachSanModel> listKS = khachSanService.findAll();
 		req.setAttribute("listks", listKS);
+		req.setAttribute("strDanhGia", strDanhGia);
 		req.getRequestDispatcher("/views/home/trangchu.jsp").forward(req, resp);
 	}
 }

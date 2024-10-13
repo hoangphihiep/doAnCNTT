@@ -8,10 +8,10 @@ public class CheckboxModel implements Serializable {
 	private boolean checked;
     private String label;
     
-	public CheckboxModel(boolean checked, String label) {
+	public CheckboxModel(String label) {
 		super();
-		this.checked = checked;
-		this.label = label;
+		this.checked = false;
+        this.label = label;
 	}
 	
 	public boolean isChecked() {

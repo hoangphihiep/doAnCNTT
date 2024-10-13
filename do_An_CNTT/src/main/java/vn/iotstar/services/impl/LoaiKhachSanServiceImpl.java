@@ -30,4 +30,9 @@ public class LoaiKhachSanServiceImpl implements ILoaiKhachSanService{
 		loaiKhachSanDao.delete(idloaikhachsan);
 	}
 
+	@Override
+	public List<LoaiKhachSanModel> listTenLoaiKhachSan() {
+		return loaiKhachSanDao.listTenLoaiKhachSan();
+	}
+
 }

@@ -30,4 +30,9 @@ public class KhachSanServiceImpl implements IKhachSanService {
 		khachSanDao.delete(idkhachsan);
 	}
 
+	@Override
+	public List<KhachSanModel> findByIdThanhPho(int idThanhPho) {
+		return khachSanDao.findByIdThanhPho(idThanhPho);
+	}
+
 }

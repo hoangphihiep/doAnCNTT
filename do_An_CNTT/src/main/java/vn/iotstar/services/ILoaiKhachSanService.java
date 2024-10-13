@@ -12,4 +12,6 @@ public interface ILoaiKhachSanService {
 	void update(LoaiKhachSanModel loaikhachsan);
 
 	void delete(int idloaikhachsan);
+	
+	List <LoaiKhachSanModel> listTenLoaiKhachSan();
 }

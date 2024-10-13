@@ -8,7 +8,7 @@ public class BuaAnModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	public static ArrayList<BuaAnModel> listBuaAn = new ArrayList() {
+	public static ArrayList<BuaAnModel> listBuaAn = new ArrayList<BuaAnModel>() {
         {
             add(new BuaAnModel(0, "Không có"));
             add(new BuaAnModel(1, "Bữa Sáng"));

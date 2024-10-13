@@ -13,4 +13,6 @@ public interface ILoaiKhachSanDao {
 	void update (LoaiKhachSanModel loaikhachsan);
 	
 	void delete (int idloaikhachsan);
+	
+	List <LoaiKhachSanModel> listTenLoaiKhachSan();
 }

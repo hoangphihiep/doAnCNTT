@@ -221,15 +221,20 @@ font-family: 'Roboto Slab'
 
 .tim-kiem {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tim-kiem .ui-inputfield {
-    padding-left: 30px !important;
-    height: 60px !important;
-    width: 480px !important;
-    font-size: 20px !important;
-    border: 3px solid #FEBB02;
-    border-radius: 4px;
+    padding-left: 20px;
+    height: 50px;
+    width: 450px;
+    font-size: 18px;
+    border: 2px solid #FEBB02;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tim-kiem .ui-inputfield:hover {
@@ -243,7 +248,7 @@ font-family: 'Roboto Slab'
 .btn-timkiem {
     margin-top: 1px;
     border-radius: 3px;
-    width: 110px;
+    width: 90px;
     height: 60px;
     font-size: 20px !important;
     background-color: #007AD9;

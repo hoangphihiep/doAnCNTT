@@ -25,6 +25,11 @@ public class LoaiKhachSanModel implements Serializable {
 		this.soKhachSan = soKhachSan;
 	}
 
+	public LoaiKhachSanModel(String ten) {
+		super();
+		this.ten = ten;
+	}
+
 	public int getId() {
 		return id;
 	}

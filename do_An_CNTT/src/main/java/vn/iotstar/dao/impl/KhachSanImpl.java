@@ -125,4 +125,36 @@ public class KhachSanImpl extends DBConnectionSQL implements IKhachSanDao {
 		}
 
 	}
+
+	@Override
+	public List<KhachSanModel> findByIdThanhPho(int idThanhPho) {
+		String sql = "select K.Id as Id, K.Ten as Ten, DiaChi,SoDienThoai, CachTrungTam, K.MoTa, GiapBien, DanhGia, BuaAn, IdThanhPho,T.Ten as TenThanhPho, IdLoaiKhachSan, L.Ten as TenLoaiKhachSan, T.UrlHinhAnh from KhachSan K, ThanhPho T,LoaiKhachSan L where T.Id = ? and K.IdThanhPho = T.Id and K.IdLoaiKhachSan = L.Id";
+		List<KhachSanModel> list = new ArrayList<KhachSanModel>();
+		try {
+			conn = new DBConnectionSQL().getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, idThanhPho);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new KhachSanModel(rs.getInt("Id"), 
+						rs.getString("Ten"), 
+						rs.getString("DiaChi"), 
+						rs.getString("SoDienThoai"), 
+						rs.getInt("CachTrungTam"),
+						rs.getString("MoTa"),
+						rs.getBoolean("GiapBien"),
+						rs.getInt("DanhGia"), 
+						rs.getInt("BuaAn"), 
+						rs.getInt("IdThanhPho"), 
+						rs.getString("TenThanhPho"),
+						rs.getInt("IdLoaiKhachSan"),
+						rs.getString("TenLoaiKhachSan"),
+						rs.getString("UrlHinhAnh")));
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

@@ -100,4 +100,31 @@ public class ThanhPhoDaoImpl extends DBConnectionSQL implements IThanhPhoDao  {
 		}
 
 	}
+
+	@Override
+	public ThanhPhoModel findByName(String tenDiaDiem) {
+		String sql = "Select * from ThanhPho where Ten =  ?";
+		try {
+			conn = new DBConnectionSQL().getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, tenDiaDiem);
+			rs = ps.executeQuery();
+			while (rs.next())
+			{
+				ThanhPhoModel thanhpho = new ThanhPhoModel();
+				thanhpho.setId(rs.getInt("Id"));
+				thanhpho.setTen(rs.getString("Ten"));
+				thanhpho.setMoTa(rs.getString("MoTa"));
+				thanhpho.setUrlHinhAnh(rs.getString("UrlHinhAnh"));
+				return thanhpho;
+			}
+			conn.close();
+			ps.close();
+			rs.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

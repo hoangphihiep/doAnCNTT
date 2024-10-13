@@ -9,7 +9,7 @@
         <c:choose>
             <c:when test="${empty username}">
                 <div class="header-right">
-                    <span style="margin-right: 30px; color: white; font-weight: 500">Chào Khách,</span>
+                    <span style="margin-right: 30px; color: white; font-weight: 500"></span>
                     <a href="#" data-toggle="modal" data-target="#dangnhap" style="width: 95px; height: 30px; font-size: 13px !important; margin-right: 15px; color: white; background-color: #007bff; text-decoration: none; padding: 5px; text-align: center;">Đăng nhập</a>
                     <a href="#" data-toggle="modal" data-target="#dangky" style="width: 95px; height: 30px; font-size: 13px !important; margin-right: 20px; color: white; background-color: #28a745; text-decoration: none; padding: 5px; text-align: center;">Đăng ký</a>
                 </div>
@@ -26,7 +26,6 @@
 		<div class="topnav">
 			<form id="form-nav" action="#" method="post">
 				<a href="/do_An_CNTT/home">Trang chủ</a> 
-				<a href="toanBoKhachSan.jsp">Khách sạn</a> 
 				<a href="caNhan.jsp">Cá nhân</a> 
 				<a href="tinTuc.jsp">Tin tức</a> <a href="lienHe.jsp">Liên hệ</a>
 			</form>

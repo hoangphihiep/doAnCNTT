@@ -12,4 +12,6 @@ public interface IKhachSanDao {
 	void update(KhachSanModel khachsan);
 
 	void delete(int idkhachsan);
+	
+	List<KhachSanModel> findByIdThanhPho(int idThanhPho);
 }

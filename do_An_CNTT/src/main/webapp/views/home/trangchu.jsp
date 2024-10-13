@@ -8,10 +8,22 @@
 		<h5>Từ những khu nghỉ dưỡng thanh bình đến những căn hộ hạng sang
 			hiện đại</h5>
 		<div class="tim-kiem">
-			<form action="${pageContext.request.contextPath}/home" method="post">
-				 <input type="text" class="ui-inputfield" id="a" name="tenThanhPhoTimKiem" placeholder="Nhập thành phố"/>
-    			 <input type="text" class="ui-inputfield" id="b" placeholder="Ngày đến - Ngày trả" name="thoiGianTimKiem" readonly />
-    			 <button type="submit" class="btn-timkiem">Tìm</button>
+			<form action="${pageContext.request.contextPath}/danhsachks/timkiem" method="post">
+				 <div style="display: flex; justify-content: flex-start; align-items: center; margin-bottom: 23px;">
+   					<div style="margin-right: 20px;">
+        				<div>Chọn địa điểm</div>
+        				<input type="text" style="padding-left: 20px;height: 50px;width: 250px;font-size: 18px;border: 2px solid #FEBB02;border-radius: 5px;transition: border-color 0.3s ease, box-shadow 0.3s ease;" id="a" name="tenThanhPhoTimKiem" placeholder="Nhập thành phố"/>
+    				</div>
+    				<div style="margin-right: 20px;">
+        				<div>Ngày đến</div>
+        				<input type="date" style="padding-left: 20px;height: 50px;width: 250px;font-size: 18px;border: 2px solid #FEBB02;border-radius: 5px;transition: border-color 0.3s ease, box-shadow 0.3s ease;" id="b" placeholder="Ngày đến" name="thoiGianDen"/>
+    				</div>
+    				<div style="margin-right: 20px;">
+        				<div>Ngày đi</div>
+        				<input type="date" style="padding-left: 20px;height: 50px;width: 250px;font-size: 18px;border: 2px solid #FEBB02;border-radius: 5px;transition: border-color 0.3s ease, box-shadow 0.3s ease;" id="c" placeholder="Ngày trả" name="thoiGianDi"/>
+    				</div>
+    				<button type="submit" style="height: 50px;width: 150px;font-size: 18px;background-color: #FEBB02;color: white;border: none;border-radius: 5px;cursor: pointer;transition: background-color 0.3s ease, box-shadow 0.3s ease; margin-top: 18px;">Tìm kiếm</button>
+				</div> 
 			</form>
 		</div>
 	</div>
@@ -106,7 +118,7 @@
                             <div style="font-size: 18px; font-weight: bold; color: #0077CC">${ks.ten}</div>
                             <div style="font-size: 14px; color: #777777 ">${ks.tenThanhPho}</div>
                             <div style="font-size: 14px; color: #777777">${ks.tenLoaiKhachSan}</div>
-                            <div style="font-size: 16px; font-weight: bold; color: #003580">${ks.danhGia} &#9733;}</div>
+                            <div style="font-size: 16px; font-weight: bold; color: #003580">${ks.danhGia} &#9733; - ${strDanhGia[ks.danhGia]}</div>
                         </a>
                     </form>
                 </div>

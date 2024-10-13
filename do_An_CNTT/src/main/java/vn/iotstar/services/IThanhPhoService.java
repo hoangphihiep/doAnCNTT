@@ -12,4 +12,6 @@ public interface IThanhPhoService {
 	void update(ThanhPhoModel thanhpho);
 
 	void delete(int idthanhpho);
+	
+	ThanhPhoModel findByName(String tenDiaDiem);
 }
